@@ -15,19 +15,23 @@ struct ContentView: View {
     @FocusState private var amountIsFocused: Bool
     
     let tipPercentages = [0, 5, 10, 20]
+    let currencySelector: String = Locale.current.currencyCode ?? "GBP"
+    
+    
+    private var totalBill: Double {
+        return checkAmount + (checkAmount * (Double(totalTip) / 100) )
+    }
     
     // Computed Value
     var totalToPay: Double {
-        let totalToPay = checkAmount + (checkAmount * (Double(totalTip) / 100) )
-        let totalPerPerson = totalToPay / Double(numPeople + 2)
-        return totalPerPerson
+        return totalBill / Double(numPeople + 2)
     }
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Enter your check amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "GBP"))
+                    TextField("Enter your check amount", value: $checkAmount, format: .currency(code: currencySelector))
                         .keyboardType(UIKeyboardType.decimalPad)
                         .focused($amountIsFocused)
                     Picker("Number of people", selection: $numPeople) {
@@ -39,18 +43,24 @@ struct ContentView: View {
                 
                 Section {
                     Picker("Tip percentage", selection: $totalTip) {
-                        // Iterate over tipPercentages and each number in the array is the unique identifier
-                        ForEach(tipPercentages, id:\.self) {
+                        ForEach(0..<101) {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.segmented)
                 } header: {
                     Text("How much would you like to tip?")
                 }
                 
                 Section {
-                    Text(totalToPay, format: .currency(code: Locale.current.currencyCode ?? "GBP"))
+                    Text(totalToPay, format: .currency(code: currencySelector))
+                } header: {
+                    Text("Amount Per Person")
+                }
+                
+                Section {
+                    Text(totalBill, format: .currency(code: Locale.current.currencyCode ?? "GBP"))
+                } header: {
+                    Text("Total Bill")
                 }
             }
             .navigationTitle("WeSplit")
