@@ -58,7 +58,8 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Text(totalBill, format: .currency(code: Locale.current.currencyCode ?? "GBP"))
+                    Text(totalBill, format: .currency(code: currencySelector))
+                        .totalAmountColored(with: totalBill)
                 } header: {
                     Text("Total Bill")
                 }
@@ -75,6 +76,12 @@ struct ContentView: View {
             }
         }
     }
+}
+
+extension View {
+    func totalAmountColored(with totalAmount: Double) -> some View {
+            modifier(TotalAmountColor(totalAmount: totalAmount))
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {

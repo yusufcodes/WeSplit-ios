@@ -11,6 +11,7 @@
 		28DEDC972858901800D8E6F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DEDC962858901800D8E6F8 /* ContentView.swift */; };
 		28DEDC992858901B00D8E6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DEDC982858901B00D8E6F8 /* Assets.xcassets */; };
 		28DEDC9C2858901B00D8E6F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DEDC9B2858901B00D8E6F8 /* Preview Assets.xcassets */; };
+		88BFCC1B28785F3700ACA9FE /* TotalAmountColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BFCC1A28785F3700ACA9FE /* TotalAmountColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		28DEDC962858901800D8E6F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		28DEDC982858901B00D8E6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28DEDC9B2858901B00D8E6F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		88BFCC1A28785F3700ACA9FE /* TotalAmountColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		28DEDC932858901800D8E6F8 /* WeSplit */ = {
 			isa = PBXGroup;
 			children = (
+				88BFCC1928785F2100ACA9FE /* Modifiers */,
 				28DEDC942858901800D8E6F8 /* WeSplitApp.swift */,
 				28DEDC962858901800D8E6F8 /* ContentView.swift */,
 				28DEDC982858901B00D8E6F8 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				28DEDC9B2858901B00D8E6F8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		88BFCC1928785F2100ACA9FE /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				88BFCC1A28785F3700ACA9FE /* TotalAmountColor.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				28DEDC972858901800D8E6F8 /* ContentView.swift in Sources */,
 				28DEDC952858901800D8E6F8 /* WeSplitApp.swift in Sources */,
+				88BFCC1B28785F3700ACA9FE /* TotalAmountColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
